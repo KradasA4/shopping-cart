@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import CategoryMenu from './components/Category/CategoryMenu';
 
 function App() {
   return (
-    <div className="App">
-
+    <div>
+      <CategoryMenu />
     </div>
   );
 }
