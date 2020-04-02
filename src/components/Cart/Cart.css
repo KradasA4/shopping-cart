@@ -1,0 +1,21 @@
+.cart {
+  display: block;
+  height: 20rem;
+  background-color: orange;
+}
+
+/* .ant-layout-content {
+  background: rgba(16, 142, 233, 1);
+  color: #fff;
+  min-height: 120px;
+  line-height: 120px;
+}
+[data-theme="dark"] .ant-layout-content {
+  background: #107bcb;
+}
+> .code-box-demo > div > .ant-layout {
+  margin-bottom: 48px;
+}
+> .code-box-demo > div > .ant-layout:last-child {
+  margin: 0;
+} */

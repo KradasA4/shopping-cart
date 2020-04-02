@@ -5,44 +5,33 @@ import ProductDisplay from './components/ProductDisplay/ProductDisplay';
 import Cart from './components/Cart/Cart';
 import { productArray } from './components/ProductDisplay/ProductArray';
 
-import { Col, Row, Button } from 'antd';
+import { Col, Row } from 'antd';
 
 class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      id: null,
-      name: "test",
-      category: "",
-      price: null,
-      image: "",
-      description: "",
-      selectedMenu: null,
-
-      products: []
+      products: productArray,
+      inCartItemId: []
     }
   }
 
-  componentDidMount() {
-    this.setState({
-      products: productArray
-    })
-  }
-  
   filterByCategory = (state, category) => {
     return(
-          state.filter( (item) => {
-            return item.category == category
+      state.filter( (item) => {
+        return item.category === category
       })
     )
   }
 
+  //  productArray ใช้ spread เป็น ...productArray เพื่อเป็นการ copy ค่า
+  //  ไม่งั้น filteredProducts จะ pass by reference
   onClickMenu = (e) => {
     let filteredProducts;
 
     if(e.key === "1") {
-      filteredProducts = productArray
+      filteredProducts = [...productArray]
     } if(e.key === "2") {
       filteredProducts = this.filterByCategory(productArray, "burger");
     } else if (e.key === "3") {
@@ -58,10 +47,18 @@ class App extends React.Component {
     })
   }
 
+  // รับ target id จาก e.target.id ใน ProductCard มี ProductDisplay เป็นแค่ตัวส่ง props
+  onClickAddToCart = (targetId) => {
+    let newinCartItemId = [...this.state.inCartItemId, Number(targetId)]
+    
+    this.setState({
+      inCartItemId: newinCartItemId
+    })
+  }
+
   render() {
-    const { products } = this.state
-    console.log("App")
-    console.log(this.state.products);
+    const { products, inCartItemId } = this.state 
+
     return (
       <div>
         <Row justify="space-between" gutter={1}>
@@ -69,11 +66,10 @@ class App extends React.Component {
             <CategoryMenu onClickMenu={this.onClickMenu} />
           </Col>
           <Col span={12}>
-            {/* <ProductDisplay  id={id} name={name} category={category} price={price} image={image} description={description} /> */}
-            <ProductDisplay products={products} />
+            <ProductDisplay products={products} onClickAddToCart={this.onClickAddToCart} />
           </Col>
           <Col span={6}>
-            <Cart />
+            <Cart inCartItemId={inCartItemId} />
           </Col>
         </Row>
       </div>
