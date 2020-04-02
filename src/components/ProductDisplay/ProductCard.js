@@ -18,7 +18,16 @@ export default class ProductCard extends Component {
           cover={<img alt={name} src={require(`${image}`)} />}
           className="antd__Card"
         >
-          <Meta title={name} description={description} />
+          <Meta 
+            title={name}
+            description={
+              <>
+                <h4>{price} baht</h4>
+                <p>{description}</p>
+              </>
+            }
+          />
+
 
           <Button 
             type="primary" 
