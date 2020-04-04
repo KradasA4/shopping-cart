@@ -4,7 +4,7 @@ import CategoryMenu from './components/Category/CategoryMenu';
 import ProductDisplay from './components/ProductDisplay/ProductDisplay';
 import Cart from './components/Cart/Cart';
 import { productArray } from './components/ProductDisplay/ProductArray';
-
+import Axios from 'axios';
 import { Col, Row } from 'antd';
 
 class App extends React.Component {
@@ -15,6 +15,17 @@ class App extends React.Component {
       products: productArray,
       inCartItemId: []
     }
+  }
+
+  getProducts = async() => {
+    await Axios.get("http://makeup-api.herokuapp.com/api/v1/products.json")
+    .then( response => {console.log(...response.data)})
+    // .then(response => {this.setState({products: [...response.data], loadingStatus: null});})
+    // .catch(error => {alert('Connection Problem\n' + error + '\nPlease try again');});
+  }
+
+  componentDidMount() {
+    this.getProducts();
   }
 
   filterByCategory = (state, category) => {
