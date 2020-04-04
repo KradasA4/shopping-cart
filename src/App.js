@@ -49,8 +49,7 @@ class App extends React.Component {
 
   // รับ target id จาก e.target.id ใน ProductCard มี ProductDisplay เป็นแค่ตัวส่ง props
   onClickAddToCart = (targetId) => {
-    let newinCartItemId = [...this.state.inCartItemId, Number(targetId)]
-    
+    let newinCartItemId = [...this.state.inCartItemId, Number(targetId)];
     this.setState({
       inCartItemId: newinCartItemId
     })

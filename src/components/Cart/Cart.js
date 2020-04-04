@@ -4,35 +4,23 @@ import './Cart.css';
 import { productArray } from '../ProductDisplay/ProductArray';
 
 export default class Cart extends Component {
-  // state = {
-  //   totalPrice: 0
-  // }
 
-  // sumPrice = () => {
-  //   let sum = 0;
-  //   this.props.inCartItemId.map( (id) => {
-  //     sum += productArray[id-1].price
-  //     console.log(`funcsum: ${sum}`)
-  //     this.setState({
-  //       totalPrice: sum
-  //     })
-  //   }) 
-  // }
+  onClickCheckout = (totalPrice) => {
+    console.log(totalPrice)
+    alert(`You selected  x products. /n Total price is ${totalPrice} baht`)
+  }
 
   render() {
-    // const inCartList = productArray.map( (product) => {
-    //   if ( this.props.inCartItemId.includes(product.id) ) {
-    //     return <li>{product.name} : {product.price} baht</li>
-    //   }
-    // })
     const { inCartItemId } = this.props;
     
+    // total price calculator
     let sum = 0;
     sum = inCartItemId.map( (id) => {
       sum += productArray[id-1].price
       return sum
     }) 
 
+    // show 0 if there's no totalpirce yet
     let totalPrice;
     console.log(inCartItemId)
     if (!sum[sum.length-1]) {
@@ -43,7 +31,7 @@ export default class Cart extends Component {
     console.log(`total ${totalPrice}`)
 
     const inCartList = inCartItemId.map( (inCartId) => {
-      return <li>{productArray[inCartId-1].name}: {productArray[inCartId-1].price}</li>
+      return <li>{productArray[inCartId-1].name}: {productArray[inCartId-1].price} baht</li>
     })
 
     return (
@@ -53,7 +41,7 @@ export default class Cart extends Component {
           {inCartList}
         </ul>
         <p>Total: { totalPrice } baht</p>
-        <Button>Checkout</Button>
+        <Button onClick={ () => this.onClickCheckout(totalPrice) }>Checkout</Button>
       </div>
     )
   }
