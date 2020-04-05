@@ -7,7 +7,7 @@ export default class Cart extends Component {
 
   onClickCheckout = (totalPrice) => {
     console.log(totalPrice)
-    alert(`You selected  x products. /n Total price is ${totalPrice} baht`)
+    alert(`You selected  x products. \nTotal price is ${totalPrice} baht`)
   }
 
   render() {
