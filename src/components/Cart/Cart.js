@@ -48,12 +48,14 @@ export default class Cart extends Component {
     if (!sum[sum.length-1]) {
       totalPrice = 0;
     } else {
-      totalPrice = sum[sum.length-1];
+      totalPrice = sum[sum.length-1].toFixed(2);
     }
     console.log(`total ${totalPrice}`)
 
     const inCartList = inCartItemId.map( (inCartId) => {
-      return <li>{productArray[inCartId-1].name}: {productArray[inCartId-1].price} baht</li>
+      let inCartProduct = productArray[inCartId-1].name
+      let inCartPrice = productArray[inCartId-1].price.toFixed(2)
+      return <li>{inCartProduct}: ${inCartPrice}</li>
     })
 
     return (
@@ -64,7 +66,7 @@ export default class Cart extends Component {
             {inCartList}
           </ul>
         </div>
-        <p>Total: { totalPrice } baht</p>
+        <p>Total: ${totalPrice} </p>
         <Button onClick={this.showModal}>Checkout</Button>
         
         {/* checkout confirm modal */}
@@ -74,9 +76,10 @@ export default class Cart extends Component {
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           okText="Confirm"
+          className="cart__checkout-modal"
         >
           <p>You selected {inCartItemId.length} products. </p>
-          <p>Total price is {totalPrice} baht</p>
+          <p>Total price is ${totalPrice}</p>
         </Modal>
       </div>
     )
