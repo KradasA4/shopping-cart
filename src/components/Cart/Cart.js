@@ -1,14 +1,36 @@
 import React, { Component } from 'react';
-import { Button, Title } from 'antd';
+import { Button, Modal } from 'antd';
 import './Cart.css';
 import { productArray } from '../ProductDisplay/ProductArray';
 
 export default class Cart extends Component {
 
-  onClickCheckout = (totalPrice) => {
-    console.log(totalPrice)
-    alert(`You selected  x products. \nTotal price is ${totalPrice} baht`)
-  }
+  // onClickCheckout = (totalPrice) => {
+  //   console.log(totalPrice)
+  //   alert(`You selected  x products. \nTotal price is ${totalPrice} baht`)
+  // }
+
+  state = { visible: false };
+
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  };
+
+  handleOk = e => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  };
+
+  handleCancel = e => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  };
 
   render() {
     const { inCartItemId } = this.props;
@@ -20,7 +42,7 @@ export default class Cart extends Component {
       return sum
     }) 
 
-    // show 0 if there's no totalpirce yet
+    // show 0 if there's no totalprice yet
     let totalPrice;
     console.log(inCartItemId)
     if (!sum[sum.length-1]) {
@@ -43,7 +65,19 @@ export default class Cart extends Component {
           </ul>
         </div>
         <p>Total: { totalPrice } baht</p>
-        <Button onClick={ () => this.onClickCheckout(totalPrice) }>Checkout</Button>
+        <Button onClick={this.showModal}>Checkout</Button>
+        
+        {/* checkout confirm modal */}
+        <Modal
+          title="Basic Modal"
+          visible={this.state.visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+          okText="Confirm"
+        >
+          <p>You selected  x products. </p>
+          <p>Total price is {totalPrice} baht</p>
+        </Modal>
       </div>
     )
   }
