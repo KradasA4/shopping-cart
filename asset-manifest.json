@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.24eaa670.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.170ef66f.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.170ef66f.chunk.js.map",
+    "runtime-main.js": "/shopping-cart/static/js/runtime-main.8330f80e.js",
+    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.8330f80e.js.map",
+    "static/css/2.ad8fe80d.chunk.css": "/shopping-cart/static/css/2.ad8fe80d.chunk.css",
+    "static/js/2.1824a52f.chunk.js": "/shopping-cart/static/js/2.1824a52f.chunk.js",
+    "static/js/2.1824a52f.chunk.js.map": "/shopping-cart/static/js/2.1824a52f.chunk.js.map",
+    "index.html": "/shopping-cart/index.html",
+    "precache-manifest.a094d76e3e28f9cb58d7be5b8af9dd95.js": "/shopping-cart/precache-manifest.a094d76e3e28f9cb58d7be5b8af9dd95.js",
+    "service-worker.js": "/shopping-cart/service-worker.js",
+    "static/css/2.ad8fe80d.chunk.css.map": "/shopping-cart/static/css/2.ad8fe80d.chunk.css.map",
+    "static/css/main.24eaa670.chunk.css.map": "/shopping-cart/static/css/main.24eaa670.chunk.css.map",
+    "static/js/2.1824a52f.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.1824a52f.chunk.js.LICENSE.txt",
+    "static/media/cake.jpg": "/shopping-cart/static/media/cake.aa699e40.jpg",
+    "static/media/cheese-burger.jpg": "/shopping-cart/static/media/cheese-burger.bb2ed30c.jpg",
+    "static/media/chicken-wings.jpg": "/shopping-cart/static/media/chicken-wings.0c0ab88b.jpg",
+    "static/media/coca-cola.jpg": "/shopping-cart/static/media/coca-cola.1e8223c5.jpg",
+    "static/media/fries.jpg": "/shopping-cart/static/media/fries.9443fa2d.jpg",
+    "static/media/ice-cream.jpg": "/shopping-cart/static/media/ice-cream.fdc00a34.jpg",
+    "static/media/mashed-potato.jpg": "/shopping-cart/static/media/mashed-potato.9dd6c6b2.jpg",
+    "static/media/orange-jucie.jpg": "/shopping-cart/static/media/orange-jucie.b368aba6.jpg",
+    "static/media/signature-burger.jpg": "/shopping-cart/static/media/signature-burger.b0d71a96.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8330f80e.js",
+    "static/css/2.ad8fe80d.chunk.css",
+    "static/js/2.1824a52f.chunk.js",
+    "static/css/main.24eaa670.chunk.css",
+    "static/js/main.170ef66f.chunk.js"
+  ]
+}
