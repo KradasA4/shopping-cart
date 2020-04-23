@@ -75,7 +75,7 @@ export default class Cart extends Component {
           onCancel={this.handleCancel}
           okText="Confirm"
         >
-          <p>You selected  x products. </p>
+          <p>You selected {inCartItemId.length} products. </p>
           <p>Total price is {totalPrice} baht</p>
         </Modal>
       </div>
