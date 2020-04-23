@@ -37,9 +37,11 @@ export default class Cart extends Component {
     return (
       <div className="cart">
         <span className="cart__header">cart</span>
-        <ul className="cart__display">
-          {inCartList}
-        </ul>
+        <div className="cart__products-box">
+          <ul className="cart__products">
+            {inCartList}
+          </ul>
+        </div>
         <p>Total: { totalPrice } baht</p>
         <Button onClick={ () => this.onClickCheckout(totalPrice) }>Checkout</Button>
       </div>

@@ -8,7 +8,13 @@
   font-size: x-large;
 }
 
-.cart__display {
+.cart__products-box {
+  height: auto;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.cart__products {
   display: block;
   height: 20rem;
   background-color: #ffb11c;
