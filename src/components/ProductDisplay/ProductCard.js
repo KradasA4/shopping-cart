@@ -25,7 +25,7 @@ export default class ProductCard extends Component {
             title={name}
             description={
               <>
-                <h4>{price} baht</h4>
+                <h4>${price.toFixed(2)}</h4>
                 <p>{description}</p>
               </>
             }
