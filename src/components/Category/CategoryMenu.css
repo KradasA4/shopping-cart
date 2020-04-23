@@ -1,0 +1,27 @@
+.menu {
+}
+
+.menu > .menu__list {
+  background-color: #ff4d00;
+  border-right: none;
+}
+
+.menu .menu__list .menu__item {
+  color: #ffffff;
+  background-color: #ff4d00;
+  width: 100%;
+}
+
+.menu .menu__list .menu__item:hover {
+  color: #ffffff;
+}
+
+.menu .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+  background-color: #ff0000;
+  color: #ffffff;
+
+}
+
+.menu .ant-menu-inline .ant-menu-item::after{
+  border-right: none;
+}

@@ -1,7 +1,24 @@
 .cart {
+  background-color: #ff4d00;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.cart__header {
+  font-size: x-large;
+}
+
+.cart__display {
   display: block;
   height: 20rem;
-  background-color: orange;
+  background-color: #ffb11c;
+  list-style: none;
+}
+
+.cart Button {
+  color: #ffffff;
+  background-color: #ffb11c;
+  border: 1px solid #ff4d00;
 }
 
 /* .ant-layout-content {

@@ -1,6 +1,40 @@
+.product-card__img-box {
+  position: relative;
+  width: 270px;
+  height: 180px; 
+  overflow: hidden; 
+  background-color: #ffb11c;
+}
 
+.product-card__img {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  max-height: 100%;
+  object-fit: cover;
+}
 
-.antd__Card .Button--center {
+.product-card .Button--center {
   display: block;
   margin: 0 auto;
+  background-color: #ffb11c;
+  border: 1px solid #ffb11c;
+}
+
+
+.product-card .Button--center:enabled{
+  display: block;
+  margin: 0 auto;
+  background-color: #ffb11c;
+  border: 1px solid #ffb11c;
+}
+
+.product-card .Button--center:hover {
+  display: block;
+  margin: 0 auto;
+  background-color: #FF0000;
+  border: 1px solid #ffb11c;
 }

@@ -11,12 +11,15 @@ export default class ProductCard extends Component {
     const {id, name, category, price, image, description} = this.props;
 
     return (
-      <div>
+      <div className="product-card">
         <Card
           hoverable
           style={{ width: 240 }}
-          cover={<img alt={name} src={require(`${image}`)} />}
-          className="antd__Card"
+          cover={
+            <div className="product-card__img-box">
+              <img className="product-card__img" alt={name} src={require(`${image}`)} />
+            </div>
+          }
         >
           <Meta 
             title={name}

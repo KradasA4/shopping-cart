@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'antd';
+import { Button, Title } from 'antd';
 import './Cart.css';
 import { productArray } from '../ProductDisplay/ProductArray';
 
@@ -35,9 +35,9 @@ export default class Cart extends Component {
     })
 
     return (
-      <div>
-        <h1>cart</h1>
-        <ul className="cart">
+      <div className="cart">
+        <span className="cart__header">cart</span>
+        <ul className="cart__display">
           {inCartList}
         </ul>
         <p>Total: { totalPrice } baht</p>

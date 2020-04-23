@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row } from 'antd';
 import ProductCard from './ProductCard';
+import './ProductDisplay.css'
 
 export default class ProductDisplay extends Component {
 
@@ -17,12 +18,16 @@ export default class ProductDisplay extends Component {
           image={item.image}
           description={item.description}
           onClickAddToCart={onClickAddToCart}
+          className="products__display"
         />
       )
     });
     
     return (
-      <Row>
+      <Row 
+        align="middle"
+        justify="center"
+        className="products">
         {productArray}
       </Row>
     )
