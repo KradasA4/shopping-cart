@@ -69,7 +69,7 @@ export default class Cart extends Component {
         
         {/* checkout confirm modal */}
         <Modal
-          title="Basic Modal"
+          title="Please confirm your orders"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
